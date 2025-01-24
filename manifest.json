@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "NEU Degree Audit Helper",
+  "version": "1.0",
+  "description": "AI-powered degree audit assistant for Northeastern University students",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "identity"
+  ],
+  "host_permissions": [
+    "*://*.northeastern.edu/*",
+    "*://*.uachieve.com/*",
+    "https://api.anthropic.com/*",
+    "https://sheets.googleapis.com/*",
+    "https://accounts.google.com/*"
+  ],
+  "oauth2": {
+    "client_id": "618393412953-cbtdcplsiuc6gaf1cav85i6l4un1eun3.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets"
+    ]
+  },
+  "web_accessible_resources": [{
+    "resources": [
+      "scripts/config.js",
+      "scripts/storage.js",
+      "scripts/injectData.js",
+      "background/*.js",
+      "scripts/*.js"
+    ],
+    "matches": [
+      "*://*.northeastern.edu/*",
+      "*://*.uachieve.com/*",
+      "https://api.anthropic.com/*",
+      "http://localhost:3000/*",
+      "https://wutdoido.com/*"
+    ]
+  }],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.northeastern.edu/*selfservice/audit/*",
+        "*://*.uachieve.com/*selfservice/audit/*"
+      ],
+      "all_frames": true,
+      "js": ["scripts/contentScriptLoader.js"]
+    },
+    {
+      "matches": [
+        "http://localhost:3000/*",
+        "https://wutdoido.com/*"
+      ],
+      "js": ["scripts/websiteContentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  }
+} 

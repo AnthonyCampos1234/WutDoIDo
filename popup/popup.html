@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NEU Audit Helper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>WutDoIDo</h1>
+    </div>
+    <div id="chat-container">
+      <div id="chat-messages"></div>
+      <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask about your degree audit...">
+        <button id="send-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.01 6.03L11.52 9.25L4 8.25L4.01 6.03ZM11.51 14.75L4 17.97V15.75L11.51 14.75ZM2.01 3L2 10L17 12L2 14L2.01 21L23 12L2.01 3Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <div class="sync-area">
+        <button id="create-sheet-button" class="secondary-button">
+          <svg class="sheets-icon" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M19 3H5C3.89 3 3 3.89 3 5V19C3 20.11 3.89 21 5 21H19C20.11 21 21 20.11 21 19V5C21 3.89 20.11 3 19 3ZM19 19H5V5H19V19ZM7 13H17V11H7V13ZM7 17H14V15H7V17ZM7 9H17V7H7V9Z" fill="currentColor"/>
+          </svg>
+          Create Course Planning Sheet
+        </button>
+      </div>
+    </div>
+    <div id="status-message"></div>
+  </div>
+  <script src="../scripts/config.js" type="module"></script>
+  <script src="../scripts/sheetsService.js" type="module"></script>
+  <script src="popup.js" type="module"></script>
+</body>
+</html> 
