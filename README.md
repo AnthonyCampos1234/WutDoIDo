@@ -1,7 +1,7 @@
 # NEU Degree Audit Helper (WutDoIDo)
 
 <p align="center">
-  <img src="pic/wutdoido.png" alt="WutDoIDo" width="200"/>
+  <img src="pic/wutdoido.png" alt="WutDoIDo" width="1000"/>
 </p>
 
 ## Project Overview
